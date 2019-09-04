@@ -1,0 +1,12 @@
+<div class="header">
+  <h1>{{title}}</h1>
+</div>
+<div class="employee-list">
+  <ul>
+    <li *ngFor="let employee of employees" [ngClass]="{'hasVacation': VacationEligible(employee)}">
+      {{ employee.lastName }}, {{ employee.firstName }} ({{ employee.yearsOfService }})
+      <button (click)="deleteEmployee(employee);">delete</button>
+    </li>
+  </ul>
+</div>
+
